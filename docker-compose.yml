@@ -1,0 +1,8 @@
+services:
+  onoma:
+    build: .
+    image: onoma-genesis-ai-platform:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
