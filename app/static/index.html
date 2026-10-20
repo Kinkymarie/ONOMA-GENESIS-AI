@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Onoma AI Genesis</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo">O</div><div><strong>ONOMA AI</strong><span>Genesis</span></div></div>
+      <nav>
+        <button class="nav active" data-view="home">⌂ Home</button>
+        <button class="nav" data-view="workspace">▦ Workspace</button>
+        <button class="nav" data-view="search">⌕ Search</button>
+        <button class="nav" data-view="agents">◈ Agents</button>
+        <button class="nav" data-view="memory">◎ Memory</button>
+        <button class="nav" data-view="system">⚙ System</button>
+      </nav>
+      <div class="sidebar-footer">Natural Artificial Intelligence<br><small>Local Genesis Runtime</small></div>
+    </aside>
+
+    <main>
+      <header>
+        <button id="commandButton">⌘ Ask Onoma or run a command</button>
+        <div class="status"><span class="dot"></span> Operational</div>
+      </header>
+
+      <section id="home" class="view active">
+        <div class="hero">
+          <p class="eyebrow">UNIVERSAL INTELLIGENCE OPERATING SYSTEM</p>
+          <h1>One Intelligence.<br>Infinite Possibilities.</h1>
+          <p>Build, search, reason, design, automate, and remember in one unified workspace.</p>
+        </div>
+        <div class="grid metrics">
+          <article><span>Runtime</span><strong>Genesis 0.1</strong></article>
+          <article><span>Intelligence</span><strong>NAI Core</strong></article>
+          <article><span>Search</span><strong>OSE Local</strong></article>
+          <article><span>Security</span><strong>Audited</strong></article>
+        </div>
+        <div class="panel">
+          <h2>Onoma Command Center</h2>
+          <div class="chat-row">
+            <textarea id="chatInput" placeholder="Describe what you want Onoma to build, research, design, analyze, or secure..."></textarea>
+            <button id="sendChat">Execute</button>
+          </div>
+          <pre id="chatOutput">Onoma is ready.</pre>
+        </div>
+      </section>
+
+      <section id="workspace" class="view">
+        <div class="section-title"><div><p class="eyebrow">OWS</p><h1>Workspace</h1></div><button id="newProject">New Project</button></div>
+        <div id="projects" class="grid cards"></div>
+        <div class="panel upload-panel">
+          <h2>Ingest Document</h2>
+          <select id="uploadProject"></select>
+          <input id="fileInput" type="file" />
+          <button id="uploadFile">Index in OSE</button>
+          <span id="uploadStatus"></span>
+        </div>
+      </section>
+
+      <section id="search" class="view">
+        <div class="section-title"><div><p class="eyebrow">OSE</p><h1>Intelligence Retrieval</h1></div></div>
+        <div class="panel searchbar"><input id="searchInput" placeholder="Search documents and workspace knowledge"/><button id="runSearch">Search</button></div>
+        <div id="searchResults" class="results"></div>
+      </section>
+
+      <section id="agents" class="view">
+        <div class="section-title"><div><p class="eyebrow">OAN</p><h1>Agent Network</h1></div></div>
+        <div id="agentsGrid" class="grid cards"></div>
+      </section>
+
+      <section id="memory" class="view">
+        <div class="section-title"><div><p class="eyebrow">OME</p><h1>Persistent Memory</h1></div><button id="addMemory">Add Memory</button></div>
+        <div id="memoryList" class="results"></div>
+      </section>
+
+      <section id="system" class="view">
+        <div class="section-title"><div><p class="eyebrow">KERNEL</p><h1>System Architecture</h1></div></div>
+        <div class="grid cards">
+          <article><h3>NAI Core</h3><p>Intent, planning, routing, verification.</p></article>
+          <article><h3>OSE</h3><p>Full-text retrieval and evidence ranking.</p></article>
+          <article><h3>OME</h3><p>Session and project memory.</p></article>
+          <article><h3>OAN</h3><p>Specialized agent execution framework.</p></article>
+          <article><h3>ODP</h3><p>FastAPI endpoints and provider adapters.</p></article>
+          <article><h3>Security</h3><p>Audit trail, scoped permissions, defensive design.</p></article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
