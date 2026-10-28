@@ -41,6 +41,9 @@
         </div>
         <div class="panel">
           <h2>Onoma Command Center</h2>
+          <label class="scope-control" for="chatScope">Project scope
+            <select id="chatScope"></select>
+          </label>
           <div class="chat-row">
             <textarea id="chatInput" placeholder="Describe what you want Onoma to build, research, design, analyze, or secure..."></textarea>
             <button id="sendChat">Execute</button>
@@ -54,8 +57,12 @@
         <div id="projects" class="grid cards"></div>
         <div class="panel upload-panel">
           <h2>Ingest Document</h2>
-          <select id="uploadProject"></select>
-          <input id="fileInput" type="file" />
+          <label class="upload-field" for="uploadProject">Upload destination
+            <select id="uploadProject"></select>
+          </label>
+          <label class="upload-field" for="fileInput">Document file
+            <input id="fileInput" type="file" />
+          </label>
           <button id="uploadFile">Index in OSE</button>
           <span id="uploadStatus"></span>
         </div>
@@ -73,7 +80,15 @@
       </section>
 
       <section id="memory" class="view">
-        <div class="section-title"><div><p class="eyebrow">OME</p><h1>Persistent Memory</h1></div><button id="addMemory">Add Memory</button></div>
+        <div class="section-title">
+          <div><p class="eyebrow">OME</p><h1>Persistent Memory</h1></div>
+          <div class="memory-actions">
+            <label class="scope-control" for="memoryScope">Save memory to
+              <select id="memoryScope"></select>
+            </label>
+            <button id="addMemory">Add Memory</button>
+          </div>
+        </div>
         <div id="memoryList" class="results"></div>
       </section>
 

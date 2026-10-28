@@ -65,7 +65,8 @@ class ModelRouter:
 
 class SearchService:
     def search(self, query: str, project_id: int | None, limit: int) -> list[dict[str, Any]]:
-        safe_query = " ".join(token for token in query.replace('"', " ").split() if token)
+        terms = [token.replace('"', '""') for token in query.split() if token]
+        safe_query = " ".join(f'"{token}"' for token in terms)
         if not safe_query:
             return []
 

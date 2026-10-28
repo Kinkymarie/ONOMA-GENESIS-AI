@@ -31,6 +31,11 @@ async function loadProjects() {
     .join("");
   $("#uploadProject").innerHTML = '<option value="">No project</option>' +
     projects.map((project) => `<option value="${project.id}">${escapeHtml(project.name)}</option>`).join("");
+  const projectOptions = projects
+    .map((project) => `<option value="${project.id}">${escapeHtml(project.name)}</option>`)
+    .join("");
+  $("#chatScope").innerHTML = '<option value="">All projects</option>' + projectOptions;
+  $("#memoryScope").innerHTML = '<option value="">Global</option>' + projectOptions;
 }
 
 async function loadAgents() {
@@ -62,7 +67,7 @@ $("#newProject").onclick = async () => {
 $("#addMemory").onclick = async () => {
   const content = prompt("Memory to store");
   if (!content) return;
-  const project_id = projects[0]?.id ?? null;
+  const project_id = $("#memoryScope").value ? Number($("#memoryScope").value) : null;
   await api("/api/memory", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -114,7 +119,11 @@ $("#sendChat").onclick = async () => {
     const result = await api("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message, project_id: projects[0]?.id ?? null, mode: "auto" }),
+      body: JSON.stringify({
+        message,
+        project_id: $("#chatScope").value ? Number($("#chatScope").value) : null,
+        mode: "auto",
+      }),
     });
     $("#chatOutput").textContent = `${result.answer}\n\nRoute: ${result.route.mode}\nAgents: ${result.route.agents.join(", ")}\nProvider: ${result.route.provider}`;
   } catch (error) {

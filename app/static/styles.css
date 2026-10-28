@@ -125,8 +125,12 @@ button {
 }
 button:hover { filter: brightness(1.08); }
 pre { white-space: pre-wrap; color: var(--accent2); line-height: 1.55; }
-.section-title { display: flex; justify-content: space-between; align-items: end; margin-bottom: 22px; }
+.section-title { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 22px; }
 .section-title h1 { font-size: 42px; margin: 0; }
+.scope-control, .upload-field { display: grid; gap: 8px; color: var(--muted); font-size: 13px; }
+.scope-control { width: min(320px, 100%); margin-bottom: 16px; }
+.memory-actions { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; }
+.memory-actions .scope-control { margin-bottom: 0; }
 .cards { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
 .cards article p, .results p { color: var(--muted); line-height: 1.5; }
 .upload-panel { display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: end; }
@@ -138,7 +142,6 @@ pre { white-space: pre-wrap; color: var(--accent2); line-height: 1.55; }
 .agent-status { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-size: 12px; }
 @media (max-width: 850px) {
   .shell { grid-template-columns: 1fr; }
-  .sidebar { display: none; }
   .view { padding: 24px; }
   .metrics { grid-template-columns: 1fr 1fr; }
   .hero h1 { letter-spacing: -2px; }
