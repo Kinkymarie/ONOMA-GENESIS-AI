@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 import sqlite3
+from collections.abc import Iterator
 from contextlib import contextmanager
-from pathlib import Path
-from typing import Iterator
 
-DB_PATH = Path(__file__).resolve().parent.parent / "data" / "onoma.db"
+from .config import settings
+
+DB_PATH = settings.DB_PATH
 
 SCHEMA = """
 PRAGMA foreign_keys = ON;
@@ -73,7 +74,10 @@ def init_db() -> None:
         if count == 0:
             conn.execute(
                 "INSERT INTO projects(name, description) VALUES (?, ?)",
-                ("Onoma AI Genesis", "Primary implementation workspace for the Universal Intelligence Operating System."),
+                (
+                    "Onoma AI Genesis",
+                    "Primary implementation workspace for the Universal Intelligence Operating System.",
+                ),
             )
         conn.commit()
 

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Onoma AI Genesis</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">ONOMA AI · GENESIS</p>
+      <h1>One Intelligence.<br>Infinite Possibilities.</h1>
+      <p>Build, search, reason, and remember in one unified workspace.</p>
+    </header>
+    <section>
+      <h2>Ask Onoma</h2>
+      <textarea id="message" placeholder="What would you like to work on?"></textarea>
+      <button id="send">Execute</button>
+      <pre id="answer">Onoma is ready.</pre>
+    </section>
+    <section>
+      <h2>Documents</h2>
+      <input id="file" type="file" />
+      <button id="upload">Upload and index</button>
+      <p id="upload-status"></p>
+      <label for="query">Search indexed documents</label>
+      <div class="search">
+        <input id="query" type="search" />
+        <button id="search">Search</button>
+      </div>
+      <div id="results"></div>
+    </section>
+    <script src="/static/app.js"></script>
+  </main>
+</body>
+</html>
