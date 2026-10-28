@@ -1,13 +1,13 @@
 repos:
-  - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.26.0
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.3
     hooks:
       - id: ruff
   - repo: https://github.com/psf/black
-    rev: 24.1.0
+    rev: 26.10.1
     hooks:
       - id: black
   - repo: https://github.com/PyCQA/isort
-    rev: 5.13.0
+    rev: 6.0.1
     hooks:
       - id: isort

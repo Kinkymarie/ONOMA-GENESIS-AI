@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from typing import Literal
+
 from pydantic import BaseModel, Field
 
 
@@ -11,7 +12,9 @@ class ProjectCreate(BaseModel):
 
 class MemoryCreate(BaseModel):
     project_id: int | None = None
-    kind: Literal["session", "project", "document", "research", "workflow", "preference"] = "project"
+    kind: Literal[
+        "session", "project", "document", "research", "workflow", "preference"
+    ] = "project"
     content: str = Field(min_length=1, max_length=10000)
 
 

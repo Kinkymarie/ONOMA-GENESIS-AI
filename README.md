@@ -514,3 +514,20 @@ meganboswell
 
 Project:
 Onoma AI Genesis
+
+## Local development
+
+Install the runtime and development dependencies, then run the checks:
+
+```bash
+python -m pip install -r requirements-dev.txt
+pytest -q
+pre-commit install
+```
+
+Start the API and interface with `uvicorn app.main:app --reload`. Runtime
+configuration is read from `ONOMA_DB_PATH`, `ONOMA_UPLOAD_MAX_BYTES`,
+`ONOMA_ENV`, `ONOMA_PROVIDER_API_KEY`, and `ONOMA_LOG_LEVEL`. Keep credentials
+in environment variables (or configure your launcher to load an untracked
+`.env` file); never commit them. `app/services.py` defines the adapter
+interface, but no provider is connected in this MVP.
